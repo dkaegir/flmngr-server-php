@@ -434,8 +434,8 @@ class FileSystem {
     $cachedImageInfo = $this->getCachedImageInfo($dirPath . '/' . $fileName);
     $resultFile = [
       'name' => "" . $fileName,
-      'size' => $cachedImageInfo['size'],
-      'timestamp' => $cachedImageInfo['mtime'],
+      'size' => $cachedImageInfo['size'] ?? null,
+      'timestamp' => $cachedImageInfo['mtime'] ?? null,
     ];
 
     if (Utils::isImage($fileName)) {
